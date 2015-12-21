@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="861968df-d376-46de-a74a-597508e2664d" solutionId="861968df-d376-46de-a74a-597508e2664d" resetWebServer="false" name="UploadFileToFTP" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="11877d01-3aba-4da3-92db-54aacf19d3e2" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="0e89b5ce-a960-4081-a19e-04774e86c733" />
+    <projectItemReference itemId="cd416605-e5f2-4200-b6c6-e682af2fe8e1" />
+  </projectItems>
+</package>

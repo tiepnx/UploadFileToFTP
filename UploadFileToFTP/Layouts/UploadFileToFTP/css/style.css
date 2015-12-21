@@ -1,0 +1,10 @@
+﻿body
+{
+    font-size:14px; padding:0; margin:0; color:#333;
+}
+/* style for start list*/
+ul.list-items, ul.list-sub-items{padding-left:5px} 
+ul.list-items li, ul.list-sub-items li{padding:5px 0px;font-size:15px; list-style:none;}
+ul.list-items li:hover, ul.list-items li:active{outline:0;}
+ul.list-items li a,ul.list-sub-items li a{color:#333}
+ul.list-sub-items li a .glyphicon-folder-open{padding-right:10px}
