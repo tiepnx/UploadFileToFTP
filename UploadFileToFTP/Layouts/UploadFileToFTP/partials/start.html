@@ -1,0 +1,65 @@
+﻿<div ng-init="vm.fnInit()">
+    <div class="container">
+        <table class="table">
+            <tr>
+                <td class="col-lg-3 col-md-3">
+                    <ul class="t5-tree list-items" style="max-height: 500px; min-height: 500px; height: 500px; overflow: auto">
+                        <li ng-repeat="list in vm.data.lists | orderBy:'title' ">
+                            <a href="javascript:;" ng-click="vm.fnLoadItem(list);list.expand = !list.expand">{{list.title}}</a>
+                            <ul ng-if="list.items.length > 0" ng-hide="list.expand==false">
+                                <li ng-repeat="node in list.items | orderBy:'title'" ng-include="'nodelist.html'" ng-if="node.fileSystemObjectType==1"></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+                <td class="col-lg-3 col-md-3" style="border: 1px solid #b3b3b3">
+                    <div style="max-height: 500px; min-height: 500px; height: 500px; overflow: auto">
+                        <table class="table table-hover">
+                            <tr ng-repeat="item in vm.data.currentFolder.items" ng-if="item.isSelected != true">
+                                <td class="file" ng-if="item.fileSystemObjectType==0" ng-class="{'select': item.isCheck}" ng-dblclick="vm.fnChoose(item);" ng-click="item.isCheck = !item.isCheck">
+                                    {{item.title}}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+                <td style="vertical-align: middle; text-align: center;">
+                    <button class="btn btn-default" type="button" ng-click="vm.fnChooseItems()"> > </button><br/><br/>
+                    <button class="btn btn-default" type="button" ng-click="vm.fnRemoveItems()"> < </button>
+                </td>
+                <td class="col-lg-3 col-md-3" style="border: 1px solid #b3b3b3">
+                    <div style="max-height: 500px; min-height: 500px; height: 500px; overflow:auto">
+                        <table class="table table-hover">
+                            <tr ng-repeat="item in vm.data.selectedItems">
+                                <td class="file" ng-class="{'select': item.isCheckRemove}" ng-click="item.isCheckRemove = !item.isCheckRemove">
+                                    {{item.title}}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <button class="btn btn-primary pull-right" type="button" ng-click="vm.fnCopyToFtp()"> Copy To FTP </button>
+                    <!--<button class="btn btn-primary pull-right" type="button" ng-click="vm.fnTest()"> Test </button>-->
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script type="text/ng-template" id="nodelist.html">
+        <a ng-if="node.fileSystemObjectType==1" href="javascript:;" ng-click="vm.fnLoadItem(list, node); node.expand = !node.expand">
+            <span class="glyphicon glyphicon-folder-open" aria-hidden="true" style="color: #EFBA49"></span> {{node.title}}
+        </a>
+        <ul ng-if="node.fileSystemObjectType==1" class="t5-tree" ng-hide="node.expand==false">
+            <li ng-repeat="node in node.items | orderBy:'title' " ng-include=" 'nodelist.html' " ng-if="node.fileSystemObjectType==1">
+            </li>
+        </ul>
+    </script>
+</div>
+<style type="text/css">
+    ul.t5-tree ul{border-left: 1px solid #ccc; margin-left: 10px; margin-top: 5px; padding-left: 15px;}
+    ul.t5-tree span.glyphicon-folder-open{margin-right: 5px}
+    td.select {background-color: #337ab7; color:white}
+    .file{cursor: pointer}
+</style>

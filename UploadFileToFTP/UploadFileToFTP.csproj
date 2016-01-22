@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{54CE268A-44A0-408B-9FA4-36452F744AED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UploadFileToFTP</RootNamespace>
+    <AssemblyName>UploadFileToFTP</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BB1F664B-9266-4fd6-B973-E1E44974B511};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>NPOI 2.2.0.0\dotnet2\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.BusinessData, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.BusinessData\14.0.0.0__71e9bce111e9429c\Microsoft.BusinessData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.SecureStoreService, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.Office.SecureStoreService\14.0.0.0__71e9bce111e9429c\Microsoft.Office.SecureStoreService.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.SharePoint.Client.ServerRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>NPOI 2.2.0.0\dotnet2\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>NPOI 2.2.0.0\dotnet2\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>NPOI 2.2.0.0\dotnet2\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>NPOI 2.2.0.0\dotnet2\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ISAPI\T5Service\IUploadService.cs" />
+    <Compile Include="ISAPI\T5Service\UploadService.svc.cs">
+      <DependentUpon>UploadService.svc</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="wpCopyFiletoFTP\wpCopyFiletoFTP.ascx.cs">
+      <DependentUpon>wpCopyFiletoFTP.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="wpCopyFiletoFTP\wpCopyFiletoFTP.ascx.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>wpCopyFiletoFTP.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Features\T5UploadFileList\T5UploadFileList.feature">
+      <FeatureId>{163c0d39-894d-474f-8a12-8b1df3e6a256}</FeatureId>
+    </None>
+    <None Include="Features\T5UploadFileToFTP\T5UploadFileToFTP.feature">
+      <FeatureId>{11877d01-3aba-4da3-92db-54aacf19d3e2}</FeatureId>
+    </None>
+    <None Include="ISAPI\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{0e89b5ce-a960-4081-a19e-04774e86c733}</SharePointProjectItemId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{cd416605-e5f2-4200-b6c6-e682af2fe8e1}</SharePointProjectItemId>
+    </None>
+    <None Include="Layouts\UploadFileToFTP\export\HCA-legacyAffiliateCode-yyyy.xlsx" />
+    <None Include="Layouts\UploadFileToFTP\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Layouts\UploadFileToFTP\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Layouts\UploadFileToFTP\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Layouts\UploadFileToFTP\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Layouts\UploadFileToFTP\ftpstatus.xlsx" />
+    <None Include="Layouts\UploadFileToFTP\js\lib\angular.min.js.map" />
+    <None Include="Package\Package.package">
+      <PackageId>{861968df-d376-46de-a74a-597508e2664d}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="UploadFTPReport\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d2d0f3b6-54ca-405d-98cc-043a53f87044}</SharePointProjectItemId>
+    </None>
+    <None Include="UploadFTPReport\UploadFTPReportInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ef4a91d8-936d-4f87-93be-97addaaba4f8}</SharePointProjectItemId>
+    </None>
+    <None Include="wpCopyFiletoFTP\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{2abe6bae-4165-43ee-b6ca-048e17c43d94}</SharePointProjectItemId>
+    </None>
+    <None Include="wpCopyFiletoFTP\wpCopyFiletoFTP.webpart" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Layouts\UploadFileToFTP\js\angular\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Features\T5UploadFileList\T5UploadFileList.Template.xml">
+      <DependentUpon>T5UploadFileList.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\T5UploadFileToFTP\T5UploadFileToFTP.Template.xml">
+      <DependentUpon>T5UploadFileToFTP.feature</DependentUpon>
+    </Content>
+    <Content Include="ISAPI\T5Service\UploadService.svc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Layouts\UploadFileToFTP\css\bootstrap.min.css" />
+    <Content Include="Layouts\UploadFileToFTP\css\style.css" />
+    <Content Include="Layouts\UploadFileToFTP\css\toastr.css" />
+    <Content Include="Layouts\UploadFileToFTP\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Layouts\UploadFileToFTP\js\app\app-setting.js" />
+    <Content Include="Layouts\UploadFileToFTP\js\app\app.js" />
+    <Content Include="Layouts\UploadFileToFTP\js\app\config.js" />
+    <Content Include="Layouts\UploadFileToFTP\js\app\controllers\start.js" />
+    <Content Include="Layouts\UploadFileToFTP\js\app\routes.js" />
+    <Content Include="Layouts\UploadFileToFTP\js\app\services\global.js" />
+    <Content Include="Layouts\UploadFileToFTP\js\app\services\sharepoint.jsom.js" />
+    <Content Include="Layouts\UploadFileToFTP\js\app\services\start.js" />
+    <Content Include="Layouts\UploadFileToFTP\js\lib\angular-ui-router.min.js" />
+    <Content Include="Layouts\UploadFileToFTP\js\lib\angular.js" />
+    <Content Include="Layouts\UploadFileToFTP\js\lib\angular.min.js" />
+    <Content Include="Layouts\UploadFileToFTP\js\lib\bootstrap.min.js" />
+    <Content Include="Layouts\UploadFileToFTP\js\lib\jquery-1.11.0.min.js" />
+    <Content Include="Layouts\UploadFileToFTP\js\lib\toastr.min.js" />
+    <Content Include="Layouts\UploadFileToFTP\partials\header.html" />
+    <Content Include="Layouts\UploadFileToFTP\partials\start.html" />
+    <Content Include="UploadFTPReport\EditDlg.htm" />
+    <Content Include="UploadFTPReport\Elements.xml" />
+    <Content Include="UploadFTPReport\FileDlg.htm" />
+    <Content Include="UploadFTPReport\Repair.aspx" />
+    <Content Include="UploadFTPReport\Schema.xml" />
+    <Content Include="UploadFTPReport\Upload.aspx" />
+    <Content Include="UploadFTPReport\UploadFTPReportInstance\Elements.xml" />
+    <Content Include="wpCopyFiletoFTP\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="wpCopyFiletoFTP\wpCopyFiletoFTP.ascx">
+      <Generator>SharePointWebPartCodeGenerator</Generator>
+      <LastGenOutput>wpCopyFiletoFTP.ascx.g.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

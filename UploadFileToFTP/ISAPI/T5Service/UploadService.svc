@@ -1,0 +1,8 @@
+﻿<%@ ServiceHost Language="C#" Debug="true"    
+    Service="UploadFileToFTP.UploadService, UploadFileToFTP, Version=1.0.0.0, 
+    Culture=Neutral, PublicKeyToken=79f537e49e46a34a" 
+    CodeBehind="UploadService.svc.cs" 
+    Factory="Microsoft.SharePoint.Client.Services.MultipleBaseAddressWebServiceHostFactory,
+        Microsoft.SharePoint.Client.ServerRuntime, Version=14.0.0.0, Culture=neutral, 
+        PublicKeyToken=71e9bce111e9429c" %>
+
