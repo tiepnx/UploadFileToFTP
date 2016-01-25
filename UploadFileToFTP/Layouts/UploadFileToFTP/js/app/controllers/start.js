@@ -28,10 +28,10 @@
             globalService.showWaiting();
             sharepointJsom.getAllListProperties().then(function (results) {
                 vm.data = $.extend(vm.data, { lists: results });
-                console.log(results);
+                //console.log(results);
                 globalService.closeWaiting();
             }, function (err) {
-                console.log(err);
+                //console.log(err);
                 globalService.closeWaiting();
             });
         }

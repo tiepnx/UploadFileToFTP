@@ -2,7 +2,7 @@
 (function (define, angular) {
     var _setting = nift_app_setting;
     _setting = $.extend(_setting, { routes: _setting.app_name + '.routes' });
-    var version = "v04";
+    var version = "v05";
     window.angular.module(_setting.app_name)
         .constant(_setting.routes, {
             start: 'start',

@@ -28,7 +28,7 @@ namespace UploadFileToFTP.wpCopyFiletoFTP
         {
             string urlLink = string.Empty;
             string basePath = "/_layouts/UploadFileToFTP";
-            string version = "?v04";
+            string version = "?v05";
 
             //urlLink += "<link rel='stylesheet' type='text/css' href='/_layouts/15/PPFA.AED.HCA/css/main.css' />";
             urlLink += string.Format("<script src='{0}/js/app/app-setting.js{1}'></script>", basePath, version);

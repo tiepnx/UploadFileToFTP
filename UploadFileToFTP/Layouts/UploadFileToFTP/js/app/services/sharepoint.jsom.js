@@ -207,7 +207,7 @@
             contact.update();
             ctx.load(contact);
             ctx.executeQueryAsync(function () {
-                console.log("Id of new contact: ", contact.get_id());
+                dfd.resolve(contact.get_id());
             }, function (sender, args) {
                 dfd.reject('Request failed. ' + args.get_message() + '\n' + args.get_stackTrace());
             });
@@ -222,7 +222,7 @@
             item.deleteObject();
             ctx.load(item);
             ctx.executeQueryAsync(function () {
-                console.log("Item deleted");
+                dfd.resolve(null);
             }, function (sender, args) {
                 dfd.reject('Request failed. ' + args.get_message() + '\n' + args.get_stackTrace());
             });
