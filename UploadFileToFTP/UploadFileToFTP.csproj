@@ -115,6 +115,7 @@
     <None Include="Layouts\UploadFileToFTP\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Layouts\UploadFileToFTP\ftpstatus.xlsx" />
     <None Include="Layouts\UploadFileToFTP\js\lib\angular.min.js.map" />
+    <None Include="NPOI 2.2.0.0\LICENSE" />
     <None Include="Package\Package.package">
       <PackageId>{861968df-d376-46de-a74a-597508e2664d}</PackageId>
     </None>
@@ -167,6 +168,29 @@
     <Content Include="Layouts\UploadFileToFTP\js\lib\toastr.min.js" />
     <Content Include="Layouts\UploadFileToFTP\partials\header.html" />
     <Content Include="Layouts\UploadFileToFTP\partials\start.html" />
+    <Content Include="NPOI 2.2.0.0\dotnet2\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="NPOI 2.2.0.0\dotnet2\NPOI.dll" />
+    <Content Include="NPOI 2.2.0.0\dotnet2\NPOI.OOXML.dll" />
+    <Content Include="NPOI 2.2.0.0\dotnet2\NPOI.OOXML.XML" />
+    <Content Include="NPOI 2.2.0.0\dotnet2\NPOI.OpenXml4Net.dll" />
+    <Content Include="NPOI 2.2.0.0\dotnet2\NPOI.OpenXml4Net.XML" />
+    <Content Include="NPOI 2.2.0.0\dotnet2\NPOI.OpenXmlFormats.dll" />
+    <Content Include="NPOI 2.2.0.0\dotnet2\NPOI.XML" />
+    <Content Include="NPOI 2.2.0.0\dotnet4\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="NPOI 2.2.0.0\dotnet4\NPOI.dll" />
+    <Content Include="NPOI 2.2.0.0\dotnet4\NPOI.OOXML.dll" />
+    <Content Include="NPOI 2.2.0.0\dotnet4\NPOI.OOXML.XML" />
+    <Content Include="NPOI 2.2.0.0\dotnet4\NPOI.OpenXml4Net.dll" />
+    <Content Include="NPOI 2.2.0.0\dotnet4\NPOI.OpenXml4Net.XML" />
+    <Content Include="NPOI 2.2.0.0\dotnet4\NPOI.OpenXmlFormats.dll" />
+    <Content Include="NPOI 2.2.0.0\dotnet4\NPOI.XML" />
+    <Content Include="NPOI 2.2.0.0\logo\neuzilla\neuzilla.jpg" />
+    <Content Include="NPOI 2.2.0.0\logo\neuzilla\neuzilla.png" />
+    <Content Include="NPOI 2.2.0.0\logo\npoi\120_120.jpg" />
+    <Content Include="NPOI 2.2.0.0\logo\npoi\240_240.png" />
+    <Content Include="NPOI 2.2.0.0\logo\npoi\32_32.jpg" />
+    <Content Include="NPOI 2.2.0.0\logo\npoi\60_60.jpg" />
+    <Content Include="NPOI 2.2.0.0\Read Me.txt" />
     <Content Include="UploadFTPReport\EditDlg.htm" />
     <Content Include="UploadFTPReport\Elements.xml" />
     <Content Include="UploadFTPReport\FileDlg.htm" />
