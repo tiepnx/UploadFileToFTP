@@ -1,8 +1,8 @@
 ﻿<div ng-init="vm.fnInit()">
     <div class="container">
-        <table class="table">
+        <table class="t5">
             <tr>
-                <td class="col-lg-3 col-md-3">
+                <td class="library">
                     <ul class="t5-tree list-items" style="max-height: 500px; min-height: 500px; height: 500px; overflow: auto">
                         <li ng-repeat="list in vm.data.lists | orderBy:'title' ">
                             <a href="javascript:;" ng-click="vm.fnLoadItem(list);list.expand = !list.expand">{{list.title}}</a>
@@ -12,9 +12,9 @@
                         </li>
                     </ul>
                 </td>
-                <td class="col-lg-3 col-md-3" style="border: 1px solid #b3b3b3">
-                    <div style="max-height: 500px; min-height: 500px; height: 500px; overflow: auto">
-                        <table class="table table-hover">
+                <td class="tdfile">
+                    <div class="container-file">
+                        <table>
                             <tr ng-repeat="item in vm.data.currentFolder.items" ng-if="item.isSelected != true">
                                 <td class="file" ng-if="item.fileSystemObjectType==0" ng-class="{'select': item.isCheck}" ng-dblclick="vm.fnChoose(item);" ng-click="item.isCheck = !item.isCheck">
                                     {{item.title}}
@@ -23,13 +23,13 @@
                         </table>
                     </div>
                 </td>
-                <td style="vertical-align: middle; text-align: center;">
-                    <button class="btn btn-default" type="button" ng-click="vm.fnChooseItems()"> > </button><br/><br/>
-                    <button class="btn btn-default" type="button" ng-click="vm.fnRemoveItems()"> < </button>
+                <td class="choosen-nochoosen">
+                    <button class="btn" type="button" ng-click="vm.fnChooseItems()"> > </button><br/><br/>
+                    <button class="btn" type="button" ng-click="vm.fnRemoveItems()"> < </button>
                 </td>
-                <td class="col-lg-3 col-md-3" style="border: 1px solid #b3b3b3">
-                    <div style="max-height: 500px; min-height: 500px; height: 500px; overflow:auto">
-                        <table class="table table-hover">
+                <td class="tdfile">
+                    <div class="container-file">
+                        <table>
                             <tr ng-repeat="item in vm.data.selectedItems">
                                 <td class="file" ng-class="{'select': item.isCheckRemove}" ng-click="item.isCheckRemove = !item.isCheckRemove">
                                     {{item.title}}
@@ -41,7 +41,7 @@
             </tr>
             <tr>
                 <td colspan="4">
-                    <button class="btn btn-primary pull-right" type="button" ng-click="vm.fnCopyToFtp()"> Copy To FTP </button>
+                    <button class="btn pull-right" type="button" ng-click="vm.fnCopyToFtp()"> Copy To FTP </button>
                     <!--<button class="btn btn-primary pull-right" type="button" ng-click="vm.fnTest()"> Test </button>-->
                 </td>
             </tr>
@@ -49,7 +49,8 @@
     </div>
     <script type="text/ng-template" id="nodelist.html">
         <a ng-if="node.fileSystemObjectType==1" href="javascript:;" ng-click="vm.fnLoadItem(list, node); node.expand = !node.expand">
-            <span class="glyphicon glyphicon-folder-open" aria-hidden="true" style="color: #EFBA49"></span> {{node.title}}
+            <!--<span class="glyphicon glyphicon-folder-open" aria-hidden="true" style="color: #EFBA49"></span>--> 
+            <img src="/_layouts/UploadFileToFTP/images/folder_open.png" /> {{node.title}}
         </a>
         <ul ng-if="node.fileSystemObjectType==1" class="t5-tree" ng-hide="node.expand==false">
             <li ng-repeat="node in node.items | orderBy:'title' " ng-include=" 'nodelist.html' " ng-if="node.fileSystemObjectType==1">
@@ -61,5 +62,37 @@
     ul.t5-tree ul{border-left: 1px solid #ccc; margin-left: 10px; margin-top: 5px; padding-left: 15px;}
     ul.t5-tree span.glyphicon-folder-open{margin-right: 5px}
     td.select {background-color: #337ab7; color:white}
-    .file{cursor: pointer}
+    table.t5, table.t5 table {width: 100%}
+    table.t5 table td {padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #dddddd;}
+    table.t5 td.library {width: 30%;max-width: 30%;min-width: 30%;}
+    table.t5 td.choosen-nochoosen {width: 10%; max-width: 10%; min-width: 10%; vertical-align: middle;text-align: center;}
+    table.t5 td.tdfile {border: 1px solid #b3b3b3;width: 30%; max-width: 30%; min-width: 30%; vertical-align:top}
+    table.t5 button.btn:hover {color: #fff;background-color: #286090;border-color: #204d74;}
+    table.t5 button.btn {color: #fff;background-color: #337ab7;border-color: #2e6da4;}
+    table.t5 .pull-right {float: right !important;}
+    table.t5.table-hover > tbody > tr:hover {background-color: #f5f5f5;}
+    table.t5>tr>td{padding: 8px;line-height: 1.42857143;vertical-align: top;border-bottom: 1px solid #ddd;}
+    table.t5 div.container-file {max-height: 500px;min-height: 500px;height: 500px;overflow: auto;}
+    table.t5 td.file {cursor: pointer;}
+    table.t5 button.btn {
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
 </style>

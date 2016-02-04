@@ -149,6 +149,8 @@
     <Content Include="Layouts\UploadFileToFTP\css\style.css" />
     <Content Include="Layouts\UploadFileToFTP\css\toastr.css" />
     <Content Include="Layouts\UploadFileToFTP\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Layouts\UploadFileToFTP\images\folder_open.png" />
+    <Content Include="Layouts\UploadFileToFTP\images\Generic Folder Yellow.png" />
     <Content Include="Layouts\UploadFileToFTP\js\app\app-setting.js" />
     <Content Include="Layouts\UploadFileToFTP\js\app\app.js" />
     <Content Include="Layouts\UploadFileToFTP\js\app\config.js" />

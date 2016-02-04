@@ -7,7 +7,7 @@
 <%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="wpCopyFiletoFTP.ascx.cs" Inherits="UploadFileToFTP.wpCopyFiletoFTP.wpCopyFiletoFTP" %>
 <link rel="stylesheet" type="text/css" href="/_layouts/UploadFileToFTP/css/toastr.css" />
-<link rel="stylesheet" type="text/css" href="/_layouts/UploadFileToFTP/css/bootstrap.min.css" />
+<%--<link rel="stylesheet" type="text/css" href="/_layouts/UploadFileToFTP/css/bootstrap.min.css" />--%>
 <link rel="stylesheet" type="text/css" href="/_layouts/UploadFileToFTP/css/style.css" />
 
 <script src='/_layouts/UploadFileToFTP/js/lib/jquery-1.11.0.min.js' type="text/javascript"></script>

@@ -262,7 +262,7 @@ namespace UploadFileToFTP
                         cNo.SetCellValue(i + 1);
                         cFileName.SetCellValue(myFiles[i].fileName);
                         cUrl.SetCellValue(myFiles[i].url);
-                        cUploadDate.SetCellValue(now.ToString("dd/MM/yyyyy"));
+                        cUploadDate.SetCellValue(now.ToString("dd/MM/yyyy"));
                         cUploadBy.SetCellValue(u.LoginName);
                         cStatus.SetCellValue(myFiles[i].status);
                     }

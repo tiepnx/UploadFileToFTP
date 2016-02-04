@@ -2,7 +2,7 @@
 (function (define, angular) {
     var _setting = nift_app_setting;
     _setting = $.extend(_setting, { routes: _setting.app_name + '.routes' });
-    var version = "v05";
+    var version = "?v07";
     window.angular.module(_setting.app_name)
         .constant(_setting.routes, {
             start: 'start',
@@ -18,7 +18,7 @@
                     //    templateUrl: _setting.partialUrl + _setting.partials.header
                     //},
                     'content': {
-                        templateUrl: _setting.partialUrl + _setting.partials.start + "?" + version,
+                        templateUrl: _setting.partialUrl + _setting.partials.start + version,
                         controller: _setting.controllers.start + ' as vm'
                     }
                 }
