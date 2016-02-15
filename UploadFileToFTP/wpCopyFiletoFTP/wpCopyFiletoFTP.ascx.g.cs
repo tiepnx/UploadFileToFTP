@@ -77,21 +77,21 @@ namespace UploadFileToFTP.wpCopyFiletoFTP {
             @__parser.AddParsedSubObject(new System.Web.UI.LiteralControl(@"
 <link rel=""stylesheet"" type=""text/css"" href=""/_layouts/UploadFileToFTP/css/toastr.css"" />
 
-<link rel=""stylesheet"" type=""text/css"" href=""/_layouts/UploadFileToFTP/css/style.css"" />
+<link rel=""stylesheet"" type=""text/css"" href=""/_layouts/UploadFileToFTP/css/style.css?v08"" />
 
 <script src='/_layouts/UploadFileToFTP/js/lib/jquery-1.11.0.min.js' type=""text/javascript""></script>
 
 
-<script type=”text/ecmascript” src=""/_layouts/SP.Core.js"" />
-<script type=”text/ecmascript” src=""/_layouts/SP.Debug.js"" />
-<script type=”text/ecmascript” src=""/_layouts/SP.Runtime.Debug.js"" />
+<script type=""text/ecmascript"" src=""/_layouts/SP.Core.js"" />
+<script type=""text/ecmascript"" src=""/_layouts/SP.Debug.js"" />
+<script type=""text/ecmascript"" src=""/_layouts/SP.Runtime.Debug.js"" />
 
 <script src='/_layouts/UploadFileToFTP/js/lib/bootstrap.min.js' type=""text/javascript""></script>
 <script src='/_layouts/UploadFileToFTP/js/lib/angular.js' type=""text/javascript""></script>
 <script src='/_layouts/UploadFileToFTP/js/lib/angular-ui-router.min.js' type=""text/javascript""></script>
 <script src='/_layouts/UploadFileToFTP/js/lib/toastr.min.js' type=""text/javascript""></script>
 
-<div id=""niftApp"" style=""color"">
+<div id=""niftApp"">
     <div data-ui-view=""header""></div>
     <div data-ui-view=""content""></div>
 </div>
