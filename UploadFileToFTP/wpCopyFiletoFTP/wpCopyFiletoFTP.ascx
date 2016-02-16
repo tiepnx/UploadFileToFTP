@@ -8,7 +8,7 @@
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="wpCopyFiletoFTP.ascx.cs" Inherits="UploadFileToFTP.wpCopyFiletoFTP.wpCopyFiletoFTP" %>
 <link rel="stylesheet" type="text/css" href="/_layouts/UploadFileToFTP/css/toastr.css" />
 <%--<link rel="stylesheet" type="text/css" href="/_layouts/UploadFileToFTP/css/bootstrap.min.css" />--%>
-<link rel="stylesheet" type="text/css" href="/_layouts/UploadFileToFTP/css/style.css?v08" />
+<link rel="stylesheet" type="text/css" href="/_layouts/UploadFileToFTP/css/style.css?v09" />
 
 <script src='/_layouts/UploadFileToFTP/js/lib/jquery-1.11.0.min.js' type="text/javascript"></script>
 
